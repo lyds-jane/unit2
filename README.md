@@ -37,11 +37,11 @@ Arduino has two main components that need to be learned in order to master its u
 1. Language (Modern C)
 2. Hardware (Arduino)
 
-**Modern C
+**Modern C**
 
 In order to learn Modern C, we took for loops that had already been completed in bash, and translated them into Modern C. An example is shown below. Both programs have the same outputs.
 
-*Addition Loop - Bash
+*Addition Loop - Bash*
 ```.sh
 even=0
 odd=0
@@ -59,8 +59,8 @@ echo "The sum of the odd numbers from 1 to 1000 is $odd"
 echo "The sum of the even numbers from 1 to 1000 is $even"
 ```
 
-*Addition Loop - Modern C
-```
+*Addition Loop - Modern C*
+```.c
 void setup()
 {
    Serial.begin(9600);
@@ -93,7 +93,7 @@ void print()
 
 In order to learn Arduino, we experimented with TinkerCad and the Arduino kits to build circuits. Below is a photo of a traffic light model we built, along with the code used for it.
 
-
+![Arduino Circuit](traffic.MOV)
 
 ```.c
 void setup()
