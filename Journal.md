@@ -45,3 +45,57 @@ For this assignment, resouces in the Arduino Reference pages were used. Specific
 * else
 * !=
 * functions
+
+
+11/11/2019
+---
+
+### What we worked on
+* Using the phyical arduino circuit to make a traffic light
+
+### What I learned
+* How to assemble the arduino
+* How to connect the arduino to computer code
+
+### To do
+* Create a binary counter using arduino
+
+13/11/2019
+---
+
+### What we worked on
+* Checking and re-doing the binary counter assignment
+
+### What I learned
+* How to organize wires with arduino
+* The binary counting pattern
+
+
+19/11/2019
+---
+
+### What we worked on
+* Reviewing weekend homework
+* Learning about logical equations
+
+### What I learned
+* Logic equations
+* Logic grids
+* Logic diagrams
+* Boolean operators & symbols
+* Binary base system
+
+### To do
+* Re-do button homework with logic equations
+
+20/11/2019
+---
+
+### What we worked on
+* Logic packet
+
+### What I learned
+* Solidified and reviewed knowledge of previous class
+
+### To do
+* Finish packet
