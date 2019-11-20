@@ -131,6 +131,12 @@ void green()
   digitalWrite(8, LOW);
 }
 ```
+### Boolean Operators
+
+![Boolean Notes](IMG_6146.JPG)
+
+*Learning to form logic diagrams and equations with binary charts
+
 
 ## Sources
 
