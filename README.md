@@ -93,7 +93,7 @@ void print()
 
 In order to learn Arduino, we experimented with TinkerCad and the Arduino kits to build circuits. Below is a photo of a traffic light model we built, along with the code used for it.
 
-![Arduino Circuit](IMG_5886 3.PNG)
+![Arduino Circuit](IMG_5886.PNG)
 
 ```.c
 void setup()
