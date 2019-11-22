@@ -430,5 +430,42 @@ void loop()
 
 ## LED Number Display
 ```.c
+int butA = 13;
+int butB = 12;
+int butC = 11;
+int s = 10;
+int d = 9;
+int f = 8;
+int g = 7;
+int h = 6;
+int j = 5;
+int k = 4;
 
+void setup()
+{
+  pinMode(butA, OUTPUT);
+  pinMode(butB, OUTPUT);
+  pinMode(butC, OUTPUT);
+  pinMode(s, OUTPUT);
+  pinMode(d, OUTPUT);
+  pinMode(f, OUTPUT);
+  pinMode(g, OUTPUT);
+  pinMode(h, OUTPUT);
+  pinMode(j, OUTPUT);
+  pinMode(k, OUTPUT);
+}
+
+void loop()
+{
+  bool a = digitalRead(butA);
+  bool b = digitalRead(butB);
+  bool c = digitalRead(butC);
+  digitalWrite(s, b | (a && ~b && c) | (~a && ~b && ~c) );
+  digitalWrite(d, ~a | (a && b && c) | (~a && ~b && ~c) );
+  digitalWrite(f, a | (~a && ~b && ~c) | (~a && c) );
+  digitalWrite(g, (~a && ~b && ~c) | (~a && b && c) );
+  digitalWrite(h, (~a && ~c) | (a && b && ~c) );
+  digitalWrite(j, (a && ~b) | (a && ~c) | (~a && ~b && ~c) );
+  digitalWrite(k, (~a && b) | (a && b && ~c) | (a && ~b) );
+}
 ```
