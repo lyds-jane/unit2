@@ -29,6 +29,11 @@ Solution_Overview
 
 Development
 ----
+
+What is Usability?
+
+According to [1](#1), usability is "the extent to which a product can be used by specified users to achieve specified goals with effectiveness, efficiency, and satisfaction in a specified context of use."
+
 ## Existing tools
 
 ### Learning to use Arduino
@@ -138,7 +143,9 @@ void green()
 *Learning to form logic diagrams and equations with binary charts
 
 
-## Sources
+## References
+
+(1) ISO. (n.d.). Usability of consumer products and products for public use. Retrieved from https://www.iso.org/obp/ui/#iso:std:iso:ts:20282:-2:ed-2:v1:en.
 
 Evaluation
 ----
