@@ -78,7 +78,7 @@ Development
 
 What is Usability?
 
-According to [1](#1), usability is "the extent to which a product can be used by specified users to achieve specified goals with effectiveness, efficiency, and satisfaction in a specified context of use."
+According to [1](#references), usability is "the extent to which a product can be used by specified users to achieve specified goals with effectiveness, efficiency, and satisfaction in a specified context of use."
 
 Therefore, usability extends beyond the meeting of the success criteria. It is wholly dependent on the user's ability to use the product and feel confident in its functioning.
 
@@ -111,6 +111,7 @@ done
 echo "The sum of the odd numbers from 1 to 1000 is $odd"
 echo "The sum of the even numbers from 1 to 1000 is $even"
 ```
+Fig. 1 - Addition loop in bash
 
 *Addition Loop - Modern C*
 ```.c
@@ -141,6 +142,8 @@ void print()
   Serial.print(odd);
 }
 ```
+Fig. 2 - Addition loop in Modern C
+
 These two codes show the differences in functions, variable declarations, commands, and arithmetic operations in the two languages.
 
 **Arduino**
@@ -157,24 +160,39 @@ void red()
   digitalWrite(13, LOW);
 }
 ```
+Fig. 3 - Traffic light code
+
+The code shown in Fig. 3 demonstrates how to control LEDs in arduino.
 
 ### Binary
 
 
-These ntoes show how to convert between decimal, binary, and hexadecimal numbers.
+Fig. 2 - Binary notes
+
+These notes show essential tables for binary and hexadeximal numbers, as well as briefly outlining the process for converting between the two, and from binary to decimal.
+
+
+Fig. 3 - Binary conversion.
+
+This table from [2](#references) shows the conversion process from decimal to binary.
 
 ### Boolean Operators
 
 ![Boolean Notes](IMG_6146.JPG)
 
+Fig. 4 - Boolean Notes
+
 These notes show the process to create logic diagrams and equations with a set of conditions.
 
+
+Fig. 5 - Binary Counter Code
 
 This is a portion of the code for an attempted binary counter. It shows the logic equations in action.
 
 ## References
 
 (1) ISO. (n.d.). Usability of consumer products and products for public use. Retrieved from https://www.iso.org/obp/ui/#iso:std:iso:ts:20282:-2:ed-2:v1:en.
+(2) Electronics Tutorials. (n.d.) Binary to Decimal and How to Convert Binary to Decimal. Retrieved from https://www.electronics-tutorials.ws/binary/bin_2.html
 
 Evaluation
 ----
