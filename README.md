@@ -160,6 +160,28 @@ This shows a circuit created to use a button, a component of the arduino essenti
 
 This shows the standard LCD circuit provided by arduino, which we replicated in real life and added two buttons to.
 
+```
+String keyboard[3][13]{
+  {"e", "a", "r", "i", "o", "t", "n", "s", "l", "c", "u", "d", "p"};
+  {"m", "h", "g", "b", "f", "y", "w", "k", "v", "x", "z", "j", "q"};
+  {" ", "SEND", "DEL", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
+}
+
+
+void setup()
+{
+  Serial.begin(9600);
+  attachInterrupt(0, buttonA, RISING);//button A in port 2
+  attachInterrupt(1, buttonB, RISING);//button B in port 3
+}
+```
+
+*Fig. 7* - English input system
+
+This segment of code shows two important skills developed in the first draft of the English Input System:
+* Matrix use
+* Interruptions
+
 ### Binary
 
 ![BNotes](Binary_notes.JPG)
