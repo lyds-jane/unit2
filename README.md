@@ -94,7 +94,7 @@ done
 echo "The sum of the odd numbers from 1 to 1000 is $odd"
 echo "The sum of the even numbers from 1 to 1000 is $even"
 ```
-Fig. 1 - Addition loop in bash
+*Fig. 1* - Addition loop in bash
 
 *Addition Loop - Modern C*
 ```.c
@@ -125,7 +125,7 @@ void print()
   Serial.print(odd);
 }
 ```
-Fig. 2 - Addition loop in Modern C
+*Fig. 2* - Addition loop in Modern C
 
 These two codes show the differences in functions, variable declarations, commands, and arithmetic operations in the two languages.
 
@@ -134,7 +134,7 @@ These two codes show the differences in functions, variable declarations, comman
 In order to learn Arduino, we experimented with TinkerCad and the Arduino kits to build circuits. Below is a photo of a traffic light model we built, along with a section of the code used for it.
 
 ![Arduino Circuit](IMG_5886.PNG)
-Fig. 3 - Traffic light
+*Fig. 3* - Traffic light
 
 This photo shows the traffic light circuit, one of the first circuits we built to learn about the use of arduino.
 
@@ -146,29 +146,29 @@ void red()
   digitalWrite(13, LOW);
 }
 ```
-Fig. 4 - Traffic light code
+*Fig. 4* - Traffic light code
 
 The code shown in Fig. 4 demonstrates how to control LEDs in arduino.
 
-[Button](button_circuit.png)
-Fig. 5 - Button circuit
+![Button](button_circuit.png)
+*Fig. 5* - Button circuit
 
 This shows a circuit created to use a button, a component of the arduino essential for our solution
 
 
-Fig. 6 - LCD Circuit
+*Fig. 6* - LCD Circuit
 
 This shows the standard LCD circuit provided by arduino, which we replicated in real life and added two buttons to.
 
 ### Binary
 
-[BNotes](Binary_notes.JPG)
-Fig. 7 - Binary notes
+![BNotes](Binary_notes.JPG)
+*Fig. 7* - Binary notes
 
 These notes show essential tables for binary and hexadeximal numbers, as well as briefly outlining the process for converting between the two, and from binary to decimal.
 
-[BConversion](Binary_conversion.png)
-Fig. 8 - Binary conversion.
+![BConversion](Binary_conversion.png)
+*Fig. 8* - Binary conversion.
 
 This table from [2](#references) shows the conversion process from decimal to binary.
 
@@ -176,7 +176,7 @@ This table from [2](#references) shows the conversion process from decimal to bi
 
 ![Boolean Notes](IMG_6146.JPG)
 
-Fig. 9 - Boolean Notes
+*Fig. 9* - Boolean Notes
 
 These notes show the process to create logic diagrams and equations with a set of conditions.
 
@@ -189,7 +189,7 @@ These notes show the process to create logic diagrams and equations with a set o
   digitalWrite(j, (a && ~b) | (a && ~c) | (~a && ~b && ~c) );
   digitalWrite(k, (~a && b) | (a && b && ~c) | (a && ~b) );
 ```
-Fig. 10 - Binary Counter Code
+*Fig. 10* - Binary Counter Code
 
 This is a portion of the code for an attempted binary counter. It shows the logic equations in action.
 
