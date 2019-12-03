@@ -44,7 +44,7 @@ Contents
 Planning
 ---
 ## Definition of the problem
-The year is 2050. NASA has planned a Mars expedition, and needs our help developping a communication system between the Earth and Mars. Since the two planets are so far away, they will have to transmit their communications through the moon. However, due to the lack of infrastructure in space, the following conditions apply:
+The year is 2050. NASA has planned a Mars expedition, and needs our help developing a communication system between the Earth and Mars. Since the two planets are so far away, they will have to transmit their communications through the moon. However, due to the lack of infrastructure in space, the following conditions apply:
 * Communications between the Earth and the Moon must be done in Morse Code
 * Communications between the Moon and Mars must be done in binary
 * The people communicating do not know morse code or binary
@@ -83,6 +83,11 @@ According to [1](#references), usability is "the extent to which a product can b
 Therefore, usability extends beyond the meeting of the success criteria. It is wholly dependent on the user's ability to use the product and feel confident in its functioning.
 
 ## Existing tools
+
+The following skills must be developed in order to succcessfully complete the project:
+* Learn to use arduino (Language and Hardware)
+* Learn how to use & convert numbers to and from Binary
+* Understand boolean operators 
 
 ### Learning to use Arduino
 
@@ -151,6 +156,9 @@ These two codes show the differences in functions, variable declarations, comman
 In order to learn Arduino, we experimented with TinkerCad and the Arduino kits to build circuits. Below is a photo of a traffic light model we built, along with a section of the code used for it.
 
 ![Arduino Circuit](IMG_5886.PNG)
+Fig. 3 - Traffic light
+
+This photo shows the traffic light circuit, one of the first circuits we built to learn about the use of arduino.
 
 ```.c
 void red()
@@ -160,19 +168,29 @@ void red()
   digitalWrite(13, LOW);
 }
 ```
-Fig. 3 - Traffic light code
+Fig. 4 - Traffic light code
 
-The code shown in Fig. 3 demonstrates how to control LEDs in arduino.
+The code shown in Fig. 4 demonstrates how to control LEDs in arduino.
+
+
+Fig. 5 - Button circuit
+
+This shows a circuit created to use a button, a component of the arduino essential for our solution
+
+
+Fig. 6 - LCD Circuit
+
+This shows the standard LCD circuit provided by arduino, which we replicated in real life and added two buttons to.
 
 ### Binary
 
-
-Fig. 2 - Binary notes
+[BNotes](Binary_notes)
+Fig. 7 - Binary notes
 
 These notes show essential tables for binary and hexadeximal numbers, as well as briefly outlining the process for converting between the two, and from binary to decimal.
 
-
-Fig. 3 - Binary conversion.
+[BConversion](Binary_conversion)
+Fig. 8 - Binary conversion.
 
 This table from [2](#references) shows the conversion process from decimal to binary.
 
@@ -180,12 +198,20 @@ This table from [2](#references) shows the conversion process from decimal to bi
 
 ![Boolean Notes](IMG_6146.JPG)
 
-Fig. 4 - Boolean Notes
+Fig. 9 - Boolean Notes
 
 These notes show the process to create logic diagrams and equations with a set of conditions.
 
-
-Fig. 5 - Binary Counter Code
+```.c
+  digitalWrite(s, b | (a && ~b && c) | (~a && ~b && ~c) );
+  digitalWrite(d, ~a | (a && b && c) | (~a && ~b && ~c) );
+  digitalWrite(f, a | (~a && ~b && ~c) | (~a && c) );
+  digitalWrite(g, (~a && ~b && ~c) | (~a && b && c) );
+  digitalWrite(h, (~a && ~c) | (a && b && ~c) );
+  digitalWrite(j, (a && ~b) | (a && ~c) | (~a && ~b && ~c) );
+  digitalWrite(k, (~a && b) | (a && b && ~c) | (a && ~b) );
+```
+Fig. 10 - Binary Counter Code
 
 This is a portion of the code for an attempted binary counter. It shows the logic equations in action.
 
