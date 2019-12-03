@@ -99,3 +99,47 @@ For this assignment, resouces in the Arduino Reference pages were used. Specific
 
 ### To do
 * Finish packet
+
+25/11/2019
+---
+
+### What we worked on 
+* Discussed in-depth the English input system
+
+### What I learned
+* How to use the two buttons in the most effective way
+* Different considerations for the various options
+
+### To do
+* Continue developing English input system
+
+27/11/2019
+---
+
+### What we worked on
+* Practiced IB style questions
+* Improved code for English input system
+
+### What I learned
+* Matrix (or multi-dimensional array) use in Modern C
+* Thinking creatively with only two buttons available
+
+### To do
+* Continue working on English input system
+* Prepare for upcoming test
+
+02/12/2019
+---
+
+### What we worked on
+* Got into teams
+* Created LCD and button circuit
+* Created flow chart for 
+* Created binary table for all necessary options
+
+### What I learned
+* How to connect the LCD display
+* My role in the project
+
+### To do
+* Finish unit 2 repo
