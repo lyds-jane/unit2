@@ -32,11 +32,11 @@ From Earth to Mars
 ====
 
 Language conversion with Arduino IDE and Modern C
-
+2
 Contents
 ----
   1. [Planning](#planning)
-  2. [Solution Overview](#solution_overview)
+  2. [Solution Overview](#solution)
   3. [Development](#development)
   4. [Evaluation](#evaluation)
   
@@ -44,12 +44,28 @@ Contents
 Planning
 ---
 ## Definition of the problem
+The year is 2050. NASA has planned a Mars expedition, and needs our help developping a communication system between the Earth and Mars. Since the two planets are so far away, they will have to transmit their communications through the moon. However, due to the lack of infrastructure in space, the following conditions apply:
+* Communications between the Earth and the Moon must be done in Morse Code
+* Communications between the Moon and Mars must be done in binary
+* The people communicating do not know morse code or binary
+* The keyboard input is limited to two button inputs
 
 ## Rationale for proposed solution
+For this program, we will use the Arduino hardware and Modern C language. Before presenting our solution to NASA, we will simulate the situation by being in three different buildings and communicating with a lightbulb. This involves dividing into three teams: Earth, the Moon, and Mars. I am on the Earth team, which means I need to be able to send and recieve messages in morse code and translate them to and from English. 
+
+The user's needs will be met with two buttons and an LCD display being built with the arduino. Then, we will program code to translate from binary and morse code to English, and vice-versa. The keyboard input system will be handled by using alternating keys to change and select options, and having the letters being presented in a matrix that allows for the most efficient system.
 
 ## Success criteria
+For the Earth team to be succcessful, it needs to meet the following criteria:
+USING TWO BUTTONS...
+* A message can be typed in English
+* An error within the message can be deleted
+* The message can be translated into morse code and shown back to the client
+* The message can have the option "SEND"
+* A message can be typed in English
+* The message can be translated to English and shown back to the client
 
-Solution_Overview
+Solution Overview
 ---
 ## Test plan
 
@@ -63,6 +79,8 @@ Development
 What is Usability?
 
 According to [1](#1), usability is "the extent to which a product can be used by specified users to achieve specified goals with effectiveness, efficiency, and satisfaction in a specified context of use."
+
+Therefore, usability extends beyond the meeting of the success criteria. It is wholly dependent on the user's ability to use the product and feel confident in its functioning.
 
 ## Existing tools
 
@@ -123,55 +141,36 @@ void print()
   Serial.print(odd);
 }
 ```
+These two codes show the differences in functions, variable declarations, commands, and arithmetic operations in the two languages.
 
 **Arduino**
 
-In order to learn Arduino, we experimented with TinkerCad and the Arduino kits to build circuits. Below is a photo of a traffic light model we built, along with the code used for it.
+In order to learn Arduino, we experimented with TinkerCad and the Arduino kits to build circuits. Below is a photo of a traffic light model we built, along with a section of the code used for it.
 
 ![Arduino Circuit](IMG_5886.PNG)
 
 ```.c
-void setup()
-{
-  pinMode(13, OUTPUT);
-  pinMode(11, OUTPUT);
-  pinMode(8, OUTPUT);
-}
-
-void loop()
-{
-  red();
-  green();
-  yellow();
-}
-
 void red()
 {
   digitalWrite(13, HIGH);
   delay(1000); // Wait for 1000 millisecond(s)
   digitalWrite(13, LOW);
 }
-  
-void yellow()  
-{
-  digitalWrite(11, HIGH);
-  delay(1000); // Wait for 1000 millisecond(s)
-  digitalWrite(11, LOW);  
-}
-
-void green()
-{
-  digitalWrite(8, HIGH);
-  delay(1000); // Wait for 1000 millisecond(s)
-  digitalWrite(8, LOW);
-}
 ```
+
+### Binary
+
+
+These ntoes show how to convert between decimal, binary, and hexadecimal numbers.
+
 ### Boolean Operators
 
 ![Boolean Notes](IMG_6146.JPG)
 
-*Learning to form logic diagrams and equations with binary charts
+These notes show the process to create logic diagrams and equations with a set of conditions.
 
+
+This is a portion of the code for an attempted binary counter. It shows the logic equations in action.
 
 ## References
 
