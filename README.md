@@ -6,7 +6,7 @@ Language conversion with Arduino IDE and Modern C
 Contents
 ----
   1. [Planning](#planning)
-  2. [Solution Overview](#solution)
+  2. [Solution Overview](#overview)
   3. [Development](#development)
   4. [Evaluation](#evaluation)
   
@@ -43,7 +43,7 @@ USING TWO BUTTONS...
 * A message can be typed in English
 * The message can be translated to English and shown back to the client
 
-Solution Overview
+Overview
 ---
 ## Test plan
 
