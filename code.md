@@ -469,3 +469,104 @@ void loop()
   digitalWrite(k, (~a && b) | (a && b && ~c) | (a && ~b) );
 }
 ```
+
+## English Input System
+
+```.c
+String text = "";
+int indexR = 0;
+int indexC = 0; 
+int rows = 3;
+int columns = 13;
+bool butA = true;
+pinMode(3, INPUT);
+pinMode(2, INPUT);
+int bA = 2;
+int bB = 3;
+
+/*
+indexR represents the row in the matrix the user has selected
+indexC represents the column in the matrix the user has selected
+butA represents whether the user is choosing the row (T) or column (F)
+*/
+  
+String keyboard[3][13]{
+  {"e", "a", "r", "i", "o", "t", "n", "s", "l", "c", "u", "d", "p"},
+  {"m", "h", "g", "b", "f", "y", "w", "k", "v", "x", "z", "j", "q"},
+  {" ", "SEND", "DEL", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"}
+};
+
+
+// Establish interrupts for one or both buttons pushed
+void setup()
+{
+  Serial.begin(9600);
+  attachInterrupt(bA, buttonA, RISING);//button A in port 2
+  attachInterrupt(bB, buttonB, RISING);//button B in port 3
+  attachInterrupt(bA && bB, both, RISING);
+}
+
+// Continually print options and message
+void loop()
+{
+  Serial.println("Option (Select:butB, Change:butA): " + keyboard[indexR][indexC]);
+  Serial.println("Message: "+ text);
+  delay(100);
+}
+
+// Determining if the user is choosing the column or row
+void buttonA()
+{
+  if(butA == true){
+    changeRow();
+  }
+  else if(butA == false){
+    changeColumn();
+  }
+}
+
+// Changing the row & resolving the overflow
+void changeRow()
+{
+  indexR++;
+  if(indexR > rows){
+    indexR = 0;
+  }
+}
+
+// Changing the column & resolving the overflow
+void changeColumn()
+{
+  indexC++;
+  if(indexC > columns){
+    indexC = 0;
+  }
+}
+
+// Switching from column to row
+void both()
+{ 
+  butA = false;
+}
+  
+
+// Selecting a letter
+void buttonB()
+{
+  String key = keyboard[indexR][indexC];
+  if(key == "DEL"){
+    int len = text.length();
+    text.remove(len - 1);
+  }
+  else if(key == "SEND"){
+    Serial.println("Message sent.");
+    text = " ";
+  }
+  else{
+    text += key;
+  }
+  indexC = 0;
+  indexR = 0;
+  butA = true;
+}
+```
