@@ -46,10 +46,19 @@ USING TWO BUTTONS...
 Overview
 ---
 ## Test plan
+Essentially, there are two main steps to our task:
+1. An English message is converted to Morse Code
+2. A Morse Code message is converted to English
+
+In these steps, the DEL and SEND options must also be tested. 
+Here is the current proposed Test Plan:
+![Test](ETM_tp)
 
 ## System diagram
 
+
 ## Flow diagrams
+Flow diagrams will be added as the code is finalized.
 
 Development
 ----
@@ -155,7 +164,7 @@ The code shown in Fig. 4 demonstrates how to control LEDs in arduino.
 
 This shows a circuit created to use a button, a component of the arduino essential for our solution
 
-![LCD](LCD.HEIC)
+![LCD](LCD.png)
 *Fig. 6* - LCD Circuit
 
 This shows the standard LCD circuit provided by arduino, which we replicated in real life and added two buttons to.
