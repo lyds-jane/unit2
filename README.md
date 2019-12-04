@@ -150,12 +150,12 @@ void red()
 
 The code shown in Fig. 4 demonstrates how to control LEDs in arduino.
 
-![Button](button_circuit.png)
+![Button](buttton_circuit.png)
 *Fig. 5* - Button circuit
 
 This shows a circuit created to use a button, a component of the arduino essential for our solution
 
-![LCD](LDC.HEIC)
+![LCD](LCD.HEIC)
 *Fig. 6* - LCD Circuit
 
 This shows the standard LCD circuit provided by arduino, which we replicated in real life and added two buttons to.
