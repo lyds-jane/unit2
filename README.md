@@ -190,7 +190,7 @@ void setup()
 *Fig. 7* - English input system
 
 This segment of code shows two important skills developed in the first draft of the English Input System:
-* Matrix use
+* Matrix use [3](#3)
 * Interruptions
 
 ### Binary
@@ -230,6 +230,7 @@ This is a portion of the code for an attempted binary counter. It shows the logi
 
 (1) ISO. (n.d.). Usability of consumer products and products for public use. Retrieved from https://www.iso.org/obp/ui/#iso:std:iso:ts:20282:-2:ed-2:v1:en.
 (2) Electronics Tutorials. (n.d.) Binary to Decimal and How to Convert Binary to Decimal. Retrieved from https://www.electronics-tutorials.ws/binary/bin_2.html
+(3) Programing Electronics Academy. (n.d.) MULTI-DIMENSIONAL ARRAYS WITH ARDUINO (AKA MATRIX). Retrieved from https://www.programmingelectronics.com/tutorial-24-multi-dimensional-arrays-aka-matrix-old-version/
 
 Evaluation
 ----
