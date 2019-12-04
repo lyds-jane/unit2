@@ -52,10 +52,12 @@ Essentially, there are two main steps to our task:
 
 In these steps, the DEL and SEND options must also be tested. 
 Here is the current proposed Test Plan:
-![Test](ETM_tp)
+![Test](ETM_tp.png)
 
 ## System diagram
 
+Here is a visual representation of the proposed solution:
+1[Diagram](ETM_sd.png)
 
 ## Flow diagrams
 Flow diagrams will be added as the code is finalized.
