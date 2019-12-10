@@ -143,3 +143,15 @@ For this assignment, resouces in the Arduino Reference pages were used. Specific
 
 ### To do
 * Finish unit 2 repo
+
+10/12/2019
+---
+
+### What we worked on
+* Shadow-coding homework problem
+
+### What I learned
+* How to break up big programs
+
+### To do
+* Finish homework problem
