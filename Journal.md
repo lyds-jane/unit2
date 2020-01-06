@@ -155,3 +155,16 @@ For this assignment, resouces in the Arduino Reference pages were used. Specific
 
 ### To do
 * Finish homework problem
+
+06/01/2020
+----
+
+### What we worked on
+* Finished English input system
+* Planned jobs for end of Unit
+
+### To do
+* Morse to english
+
+### Questions
+* Can you match two arrays?
