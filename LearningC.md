@@ -1,4 +1,4 @@
-Homework for January 8th
+Homework for January 6th
 -----
 
 ### #1: Make a program that checks if two integers are the same
@@ -102,34 +102,140 @@ int main(void) {
 ```
 
 ### #4
-
-### #5
 ```.c
 #include <stdio.h>
 
 int main(void) {
-  int x, y;
-  printf("This program determines what quadrant a point lies in\n");
-  printf("Enter the value for x\n");
-  scanf("%d", &x);
-  printf("Enter the value for y\n");
-  scanf("%d", &y);
-  if(x < 0 && y < 0){
-    printf("%d,%d is in Quadrant 4\n", x,y);
+  int one, two, three, biggest;
+  printf("This program tests the biggest out of three numbers\n");
+  printf("Enter the first number\n");
+  scanf("%d", &one);
+  printf("Enter the second number\n");
+  scanf("%d", &two);
+  printf("Enter the third number\n");
+  scanf("%d", &three);
+  if(one > two && one > three){
+    biggest = one;
   }
-  else if(x < 0 && y > 0){
-    printf("%d,%d is in Quadrant 2\n", x,y);
+  else if(two > one && two > three){
+    biggest = two;
   }
-  else if(x > 0 && y < 0){
-    printf("%d,%d is in Quadrant 3\n", x,y);
-  }
-  else if(x > 0 && y > 0){
-    printf("%d,%d is in Quadrant 1\n", x,y);
+  else if(three > one && three > two){
+    biggest = three;
   }
   else{
-    printf("%d,%d is on an axis", x,y);
+    printf("Error\n");
+  }
+  printf("First number: %d  Second number: %d Third Number: %d", one, two, three);
+  printf("%d is the biggest number\n", biggest);
+}
+```
+
+### #5
+
+
+### #6
+```.c
+#include <stdio.h>
+
+int main(void) {
+  int math, phy, chem, total, mp;
+  printf("This program checks your eligibility for Western's Engineering Program\n");
+  printf("Please enter the following:\n");
+  printf("Your math mark\n");
+  scanf("%i", &math);
+  printf("Your physics mark\n");
+  scanf("%i", &phy);
+  printf("Your chemistry mark\n");
+  scanf("%i", &chem);
+  total = math + phy + chem;
+  mp = math + phy;
+  if((math >= 65 && phy >= 55 && chem >= 50 && total >= 180) || (mp >= 140)){
+    printf("You are eligible for admission.");
+  }
+  else{
+    printf("Sorry, you are not eligible for admission.");
   }
 }
 ```
 
-### #6
+### #7
+```.c
+#include <stdio.h>
+
+int main(void) {
+  int temp;
+  printf("This program describes the temperature\n");
+  printf("Please enter a temperature in celsius\n");
+  scanf("%i", &temp);
+  if(temp < 0){
+    printf("Freezing weather.\n");
+  }
+  else if(0 < temp && temp < 10){
+    printf("Very Cold weather.\n");
+  }
+  else if(10 < temp && temp < 20){
+    printf("Cold weather.\n");
+  }
+  else if(20 < temp && temp < 30){
+    printf("Normal weather.\n");
+  }
+  else if(30 < temp && temp < 40){
+    printf("It's Hot.\n");
+  }
+  else if(40 <= temp){
+    printf("It's Very Hot.\n");
+  }
+}
+```
+
+### #8
+```.c
+#include <stdio.h>
+void exit(int status);
+int main(void) {
+  int angles[3];
+  int total;
+  printf("This program determines a triangle's type\n");
+  printf("Please enter one angle\n");
+  scanf("%i", &angles[0]);
+  printf("Please enter another angle\n");
+  scanf("%i", &angles[1]);
+  printf("Please enter the final angle\n");
+  scanf("%i", &angles[2]);
+  }
+  for(int i=0; i<3; i++){
+    if(angles[i] == 90){
+      printf("This is a right angle triangle\n");
+      exit(0);
+    }
+    else if(angles[i] > 90){
+      printf("This is an obtuse triangle\n");
+      exit(0);
+    }
+  }
+  printf("This is an acute triangle\n");
+}
+```
+
+### #9
+```.c
+#include <stdio.h>
+void exit(int status);
+int main(void) {
+  int angles[3];
+  int total;
+  printf("This program determines if a tirangle is valid\n");
+  printf("Please enter one angle\n");
+  scanf("%i", &angles[0]);
+  printf("Please enter another angle\n");
+  scanf("%i", &angles[1]);
+  printf("Please enter the final angle\n");
+  scanf("%i", &angles[2]);
+  total = angles[0] + angles[1] + angles[2];
+  if((angles[0] + angles[1] + angles[2]) != 180){
+    printf("This triangle is invalid.");
+    exit(0);
+  }
+}
+```
