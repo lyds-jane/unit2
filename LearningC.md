@@ -264,3 +264,48 @@ int main(void) {
   }
 }
 ```
+
+### #10
+```.c
+#include <stdio.h>
+
+int main(void) {
+  int id, unit, charge, surcharge;
+  double rate;
+  char name[20];
+  printf("This program calculates your electricity bill.");
+  printf("Please enter your IDNO to begin\n");
+  scanf("%d", &id);
+  printf("Please enter your name\n");
+  scanf("%s", name);
+  printf("Please enter the unit of electricity you have consumed\n");
+  scanf("%d", &unit);
+  if(unit <= 199){
+    rate = 1.20;
+    charge = unit * rate;
+  }
+  else if(unit >= 200 && unit < 400){
+    rate = 1.50;
+  }
+  else if(unit >= 400 && unit < 600){
+    rate = 1.80;
+  }
+  else if(unit >= 600){
+    rate = 2;
+  }
+  else{
+    printf("Error. Invalid entry for unit.");
+  }
+  charge = unit * rate;
+  if(charge > 400){
+    surcharge = charge * 0.15;
+  }
+  printf("Customer IDNO: %d\n", id);
+  printf("Customer name: %s\n", name);
+  printf("unit Consumed: %d\n", unit);
+  printf("Amount Charged @Rs %lf per unit: %d\n", rate, charge);
+  printf("Surcharge amount: %d\n", surcharge);
+  printf("Net Amount Paid by the Customer: ");
+  printf("%i\n", charge + surcharge);
+}
+```
