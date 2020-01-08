@@ -132,7 +132,32 @@ int main(void) {
 ```
 
 ### #5
-
+```.c
+#include <stdio.h>
+int main(void) {
+  int x, y;
+  printf("This program determines what quadrant a point lies in\n");
+  printf("Enter the value for x\n");
+  scanf("%d", &x);
+  printf("Enter the value for y\n");
+  scanf("%d", &y);
+  if(x < 0 && y < 0){
+    printf("%d,%d is in Quadrant 4\n", x,y);
+  }
+  else if(x < 0 && y > 0){
+    printf("%d,%d is in Quadrant 2\n", x,y);
+  }
+  else if(x > 0 && y < 0){
+    printf("%d,%d is in Quadrant 3\n", x,y);
+  }
+  else if(x > 0 && y > 0){
+    printf("%d,%d is in Quadrant 1\n", x,y);
+  }
+  else{
+    printf("%d,%d is on an axis", x,y);
+  }
+}
+```
 
 ### #6
 ```.c
