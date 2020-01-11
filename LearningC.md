@@ -309,3 +309,62 @@ int main(void) {
   printf("%i\n", charge + surcharge);
 }
 ```
+
+Weekend Practice
+====
+
+### #1
+```.c
+#include <stdio.h>
+//This program gives an average of 10 numbers inputted by the user
+int main(void) {
+  int total, average;
+  for(int i=0; i<10; i++){
+    int num = 0;
+    // 1. Get input
+    printf("Please enter a number\n");
+    scanf("%i", &num);
+    // 2. Add to total
+    total = num + total;
+  }
+  // 3. Calculate average
+  average = total / 10;
+  printf("The average is %i.\n", average);
+}
+```
+
+### #2
+```.c
+#include <stdio.h>
+//This program displays the cubes of numbers up to an inputted number
+int main(void) {
+  int last;
+  printf("Please enter the number of cubes you would like\n");
+  scanf("%i", &last);
+  for(int i=1; i<=last; i++){
+    int cube = (i * i * i);
+    printf("The number is: %i and the cube is: %i\n", i, cube);
+  }
+}
+```
+
+### #3
+```.c
+#include <stdio.h>
+//This program calculates the factorial of an input
+int main(void) {
+  int num;
+  int factorial = 1;
+  printf("Please enter the number you would like the factorial of\n");
+  scanf("%i", &num);
+  for(int i=1; i<=num; i++){
+    factorial = (i * factorial);
+  }
+  printf("The factorial is %i\n", factorial);
+}
+```
+
+### #4
+```.c
+
+```
