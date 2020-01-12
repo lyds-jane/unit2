@@ -366,5 +366,69 @@ int main(void) {
 
 ### #4
 ```.c
+#include <stdio.h>
+#include <math.h>
+//This program displays the n terms of harmonic series and their sum.  1 + 1/2 + 1/3 + 1/4 + 1/5 ... 1/n terms
+int main(void) {
+  float num, total = 1, n;
+  //num is the number to add to the total
+  printf("Please enter a number\n");
+  scanf("%f", &n);
+  printf("1 ");
+  for(float i=2; i<=n+1; i++){
+    num = 1/i;
+    //Create next number in sequence
+    printf("+ 1/%f ", i);
+    //Show final math
+    total = total + num;
+  }
+  printf("\nThe sum is %f \n", total);
+}
+```
 
+### #5
+```.c
+#include <stdio.h>
+#include <math.h>
+//This program finds the sum of the series 1 +11 + 111 + 1111 + .. n terms
+int main(void) {
+  int num = 1, total = 1, n, arr[9]={num};
+  //num is the number to add to the total
+  //arr limit is 9 because of int limits
+  printf("Please enter a number\n");
+  scanf("%i", &n);
+  printf("1 ");
+  for(int i=1; i<n; i++){
+    int add = pow(10, i);
+    // To create this sequence, you ADD 10^i(add) to each previous num.
+    num = num + add;
+    //Create next number in sequence
+    arr[i]=num;
+    printf("+ %i ", arr[i]);
+    //Show final math
+    total = total + num;
+  }
+  printf("\n The sum is %i \n", total);
+}
+```
+### #6
+```.c
+#include <stdio.h>
+#include <math.h>
+//This program gives the perfect numbers in a given range
+int main(void) {
+  int start, end;
+  int perfect[4]={6, 28, 496, 8128};
+  // All other perfect numbers are outside of the int range
+  printf("Enter beginning of range: ");
+  scanf("%i", &start);
+  printf("Enter end of range: ");
+  scanf("%i", &end);
+  printf("The perfect numbers within the given range: ");
+  for(int i=0; i<4; i++){
+    if(perfect[i] >= start && perfect[i] <= end){
+      printf("%i ", perfect[i]);
+    }
+  }
+}
 ```
