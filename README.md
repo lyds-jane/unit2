@@ -2,7 +2,7 @@ From Earth to Mars
 ====
 
 Language conversion with Arduino IDE and Modern C
-2
+
 Contents
 ----
   1. [Planning](#planning)
@@ -52,19 +52,150 @@ Essentially, there are two main steps to our task:
 
 In these steps, the DEL and SEND options must also be tested. 
 Here is Earth's Test Plan:
-![Test](ETM_tp.png)
+![Test](earth_test_plan.png)
+*Fig. 1 - Earth's test plan*
+This shows the test plan for the Earth team. It goes through each of the needed functions simply.
 
 Here is the General Test Plan for the whole system:
+![FullTest](
+*Fig. 2 - General test plan*
+This shows the general test plan all of the teams will use. It assures that a message can be inputted and transmitted, as well as clearly recieved by the other teams.
 
 ## System diagram
 
 Here is a visual representation of the system:
-![Diagram](ETM_sd.png)
-
-Here, you can see the two buttons used to input the text. The LCD gives the user feedback for better usability so they know what they are typing. Finally, the message is sent by a flickering lightbulb.
+![Diagram](system_diagram.png)
+*Fig. 3 - System Diagram*
+This shows the system diagram for the proposed solution. Here, you can see the two buttons used to input the text. The LCD gives the user feedback for better usability so they know what they are typing. Finally, the message is sent by a flickering lightbulb.
 
 ## Flow diagrams
 
+The following flow diagrams are from:
+1. The Morse to English program, the code I was responsible for developping for my team
+2. The English to Morse program, a code the Earth team used developped by Chinomnso and Khalid
+3. The English Input program I devlopped that didn't end up getting used in the final product.
+
+**Morse to English**
+[!morse2english](Morse2English.png)
+*Fig. 4 - Morse to English*
+This shows the Morse to Enlgish logical process. The diagram is separated into functions to show the way in which the computer jumps from one function to another, depending on the results of the interrupts and if statements.
+
+**English to Morse**
+*Fig. 5 - English to Morse by Khalid*
+This shows the flow diagram for the English to Morse code. This code has an added element - the morse code must be shown on the lightbulb output.
+
+**English Input**
+[!englishinput](english_input.png)
+*Fig. 6 - English Input*
+This shows the logic behind an initial plan for an English Input system. The system was later amalgamated with the English to Morse program, so this code was not used in the end. However, I am very proud of this system, as it is very efficient from a user's standpoint. Instead of the keyboard options being in a 1-dimensional array, I created a matrix that reduced the number of clicks necessary to select a given letter. The full code is below:
+
+```.c
+/*
+How it works:
+Button A: Changes rows or columns
+Button B: Selects & goes from rows to columns
+*/
+
+int butB = 1;
+String text = "";
+int indexR = 0; // the row in the matrix the user has selected
+int indexC = 0; // the row in the matrix the user has selected
+int rows = 3;
+int columns = 14;
+
+/*
+butB counts how many times butB has been clicked.
+0 = selecting a row
+1 = selecting a column
+*/
+  
+String keyboard[3][14]{
+  {"Line1", "e", "a", "r", "i", "o", "t", "n", "s", "l", "c", "u", "d", "p"},
+  {"Line2", "m", "h", "g", "b", "f", "y", "w", "k", "v", "x", "z", "j", "q"},
+  {"Line3", " ", "SEND", "DEL", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"}
+};
+
+
+// Establish interrupts for one or both buttons pushed
+void setup()
+{
+  pinMode(3, INPUT);
+  pinMode(2, INPUT);
+  Serial.begin(9600);
+  attachInterrupt(0, buttonA, RISING);//button A in port 2
+  attachInterrupt(1, buttonB, RISING);//button B in port 3 
+  Serial.println("Changing rows");
+  message();
+}
+
+void loop(){
+}
+
+// Determining if the user is choosing the column or row
+void buttonA()
+{
+  if(butB == 1){
+    Serial.println("Changing rows");
+    changeRow();
+  }
+  else if(butB == 0){
+    Serial.println("Changing columns");
+    changeColumn();
+  }
+  message();
+}
+
+// Changing the row & resolving the overflow
+void changeRow()
+{
+  indexR++;
+  if(indexR > rows){
+    indexR = 0;
+  }
+}
+
+// Changing the column & resolving the overflow
+void changeColumn()
+{
+  indexC++;
+  if(indexC > columns){
+    indexC = 0;
+  }
+}
+  
+    
+// Selecting a letter
+void buttonB()
+{
+  String key = keyboard[indexR][indexC];
+  butB++;
+  if(butB > 1){
+    butB = 0;
+  }
+  else if(butB == 1){
+    if(key == "DEL"){
+      int len = text.length();
+      text.remove(len - 1);
+    }
+    else if(key == "SEND"){
+      Serial.println("\nMessage sent.\n\n");
+      text = " ";
+    }
+    else{
+      text += key;
+    }
+    indexC = 0;
+    indexR = 0;
+  }
+  message();
+}
+
+void message()
+{
+  Serial.println("Yes:A No:B - " + keyboard[indexR][indexC]);
+  Serial.println("Msg: " + text);
+}
+```
 
 Development
 ----
@@ -112,7 +243,6 @@ done
 echo "The sum of the odd numbers from 1 to 1000 is $odd"
 echo "The sum of the even numbers from 1 to 1000 is $even"
 ```
-*Fig. 1* - Addition loop in bash
 
 *Addition Loop - Modern C*
 ```.c
@@ -143,7 +273,6 @@ void print()
   Serial.print(odd);
 }
 ```
-*Fig. 2* - Addition loop in Modern C
 
 These two codes show the differences in functions, variable declarations, commands, and arithmetic operations in the two languages.
 
@@ -151,8 +280,8 @@ These two codes show the differences in functions, variable declarations, comman
 
 In order to learn Arduino, we experimented with TinkerCad and the Arduino kits to build circuits. Below is a photo of a traffic light model we built, along with a section of the code used for it.
 
-![Arduino Circuit](IMG_5886.PNG)
-*Fig. 3* - Traffic light
+![Arduino Circuit](traffic_light.PNG)
+*Fig. 7 - Traffic light*
 
 This photo shows the traffic light circuit, one of the first circuits we built to learn about the use of arduino.
 
@@ -164,39 +293,41 @@ void red()
   digitalWrite(13, LOW);
 }
 ```
-*Fig. 4* - Traffic light code
+*Fig. 8 - Traffic light code*
 
 The code shown in Fig. 4 demonstrates how to control LEDs in arduino.
 
 ![Button](buttton_circuit.png)
-*Fig. 5* - Button circuit
+*Fig. 9 - Button circuit*
 
 This shows a circuit created to use a button, a component of the arduino essential for our solution, as buttons are how we will input the message.
 
 ![LCD](LCD.png)
-*Fig. 6* - LCD Circuit
+*Fig. 10 - LCD Circuit*
 
-This shows the standard LCD circuit provided by arduino, which we replicated in real life for an output. This circuit will have two buttons and a lightbulb added to it for our final product.
+This shows the standard LCD circuit provided by arduino, which we replicated in real life, in addition to two buttons to use as an input. The final product also had a lightbulb added to it.
 
 ### Binary
 
 ![BNotes](Binary_notes.JPG)
-*Fig. 7* - Binary notes
+*Fig. 11 - Binary notes*
 
 These notes show essential tables for binary and hexadeximal numbers, as well as briefly outlining the process for converting between the two, and from binary to decimal.
 
 ![BConversion](Binary_conversion.png)
-*Fig. 8* - Binary conversion.
+*Fig. 12 - Binary conversion.*
 
 This table from [2](#references) shows the conversion process from decimal to binary.
 
 ### Boolean Operators
 
-![Boolean Notes](IMG_6146.JPG)
+![Boolean Notes](boolean.JPG)
 
-*Fig. 9* - Boolean Notes
+*Fig. 13 - Boolean Notes*
 
 These notes show the process to create logic diagrams and equations with a set of conditions.
+
+This is a portion of the code for an attempted binary counter. It shows the logic equations in action:
 
 ```.c
   digitalWrite(s, b | (a && ~b && c) | (~a && ~b && ~c) );
@@ -207,9 +338,6 @@ These notes show the process to create logic diagrams and equations with a set o
   digitalWrite(j, (a && ~b) | (a && ~c) | (~a && ~b && ~c) );
   digitalWrite(k, (~a && b) | (a && b && ~c) | (a && ~b) );
 ```
-*Fig. 10* - Binary Counter Code
-
-This is a portion of the code for an attempted binary counter. It shows the logic equations in action.
 
 ### C Language
 
@@ -235,8 +363,11 @@ Below is how my GitHub repository looks when I first log on.
 ## References
 
 (1) ISO. (n.d.). Usability of consumer products and products for public use. Retrieved from https://www.iso.org/obp/ui/#iso:std:iso:ts:20282:-2:ed-2:v1:en.
+
 (2) Electronics Tutorials. (n.d.) Binary to Decimal and How to Convert Binary to Decimal. Retrieved from https://www.electronics-tutorials.ws/binary/bin_2.html
+
 (3) Programing Electronics Academy. (n.d.) MULTI-DIMENSIONAL ARRAYS WITH ARDUINO (AKA MATRIX). Retrieved from https://www.programmingelectronics.com/tutorial-24-multi-dimensional-arrays-aka-matrix-old-version/
+
 (4) “Language Reference.” Arduino Reference, www.arduino.cc/reference/en/#functions.
 
 Evaluation
