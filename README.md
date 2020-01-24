@@ -21,9 +21,9 @@ The year is 2050. NASA has planned a Mars expedition, and needs our help develop
 * The keyboard input is limited to two button inputs
 
 ## Rationale for proposed solution
-For this program, we will use the Arduino hardware and Modern C language. Before presenting our solution to NASA, we will simulate the situation by being in three different buildings and communicating with a lightbulb. This involves dividing into three teams: Earth, the Moon, and Mars. I am on the Earth team, which means I need to be able to send and recieve messages in morse code and translate them to and from English. 
+For this program, we will use the Arduino hardware and Modern C language. Before presenting our solution to NASA, we will simulate the situation by communicating with a lightbulb down a hallway. This involves dividing into three teams: Earth, the Moon, and Mars. I am on the Earth team, which means I need to be able to send and recieve messages in morse code and translate them to and from English. 
 
-The user's needs will be met with two buttons and an LCD display being built with the arduino. Then, we will program code to translate from binary and morse code to English, and vice-versa. The keyboard input system will be handled by using alternating keys to change and select options, and having the letters being presented in a matrix that allows for the most efficient system.
+The user's needs will be met with two input buttons and an LCD display output in an arduino curcuit. Then, we will program code to translate from binary and morse code to English, and vice-versa. This is a very good solution to the problem. The arduino is a simple curciut-building hardware that has very detailed references to provide support for beginners in coding. The Modern C language is very intuitive, and has a good setup for functions that are very useful in this assignment.
 
 The feasibility of this solution is as follows:
 
@@ -37,10 +37,10 @@ The feasibility of this solution is as follows:
 For the Earth team to be succcessful, it needs to meet the following criteria:
 USING TWO BUTTONS...
 * A message can be typed in English
-* An error within the message can be deleted
+* The last entered key can be deleted
 * The message can be translated into morse code and shown back to the client
-* The message can have the option "SEND"
-* A message can be typed in English
+* The message can have the option to be "sent"
+* A message can be typed in morse code
 * The message can be translated to English and shown back to the client
 
 Overview
@@ -51,16 +51,20 @@ Essentially, there are two main steps to our task:
 2. A Morse Code message is converted to English
 
 In these steps, the DEL and SEND options must also be tested. 
-Here is the current proposed Test Plan:
+Here is Earth's Test Plan:
 ![Test](ETM_tp.png)
+
+Here is the General Test Plan for the whole system:
 
 ## System diagram
 
-Here is a visual representation of the proposed solution:
+Here is a visual representation of the system:
 ![Diagram](ETM_sd.png)
 
+Here, you can see the two buttons used to input the text. The LCD gives the user feedback for better usability so they know what they are typing. Finally, the message is sent by a flickering lightbulb.
+
 ## Flow diagrams
-Flow diagrams will be added as the code is finalized.
+
 
 Development
 ----
@@ -74,9 +78,12 @@ Therefore, usability extends beyond the meeting of the success criteria. It is w
 ## Existing tools
 
 The following skills must be developed in order to succcessfully complete the project:
-* Learn to use arduino (Language and Hardware)
-* Learn how to use & convert numbers to and from Binary
-* Understand boolean operators 
+* Using arduino (Language and Hardware)
+* Using & converting numbers to and from Binary
+* Understanding boolean operators 
+* Using the C language
+* Using functions in a code
+* Using GitHub
 
 ### Learning to use Arduino
 
@@ -164,34 +171,12 @@ The code shown in Fig. 4 demonstrates how to control LEDs in arduino.
 ![Button](buttton_circuit.png)
 *Fig. 5* - Button circuit
 
-This shows a circuit created to use a button, a component of the arduino essential for our solution
+This shows a circuit created to use a button, a component of the arduino essential for our solution, as buttons are how we will input the message.
 
 ![LCD](LCD.png)
 *Fig. 6* - LCD Circuit
 
-This shows the standard LCD circuit provided by arduino, which we replicated in real life and added two buttons to.
-
-```
-String keyboard[3][13]{
-  {"e", "a", "r", "i", "o", "t", "n", "s", "l", "c", "u", "d", "p"};
-  {"m", "h", "g", "b", "f", "y", "w", "k", "v", "x", "z", "j", "q"};
-  {" ", "SEND", "DEL", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
-}
-
-
-void setup()
-{
-  Serial.begin(9600);
-  attachInterrupt(0, buttonA, RISING);//button A in port 2
-  attachInterrupt(1, buttonB, RISING);//button B in port 3
-}
-```
-
-*Fig. 7* - English input system
-
-This segment of code shows two important skills developed in the first draft of the English Input System:
-* Matrix use [3](#3)
-* Interruptions
+This shows the standard LCD circuit provided by arduino, which we replicated in real life for an output. This circuit will have two buttons and a lightbulb added to it for our final product.
 
 ### Binary
 
@@ -226,11 +211,33 @@ These notes show the process to create logic diagrams and equations with a set o
 
 This is a portion of the code for an attempted binary counter. It shows the logic equations in action.
 
+### C Language
+
+The C language was not used in this project. However, we learned how to use it during the development of the software. This helped us develop our logical reasoning, and the use of different functions.
+
+Here is one example of the C language. A complete index of our work can be found in learningC.md
+
+```.c
+```
+
+### Functions 
+
+Functions were paramount to the development of this solution. They were used in interruptions, to print standard messages, and to translate the input. The ["Functions"](#references) subsection of the Arduino references was used extensively to learn how to use this skill.
+
+The flowcharts in [Design](#flow) show the logic of functions, and how they interact with one another.
+
+### GitHub
+
+GitHub was used in our previous assignments. It is a good place to store information, as we are able to keep muliple files and file types in one repository. The main process journal is located in this .md file. Then, codes and photos can be stored in other files in the repository. GitHub is especially useful as the entire class has access to each others' repositories. This helps us share resources and learn from each other.
+
+Below is how my GitHub repository looks when I first log on. 
+
 ## References
 
 (1) ISO. (n.d.). Usability of consumer products and products for public use. Retrieved from https://www.iso.org/obp/ui/#iso:std:iso:ts:20282:-2:ed-2:v1:en.
 (2) Electronics Tutorials. (n.d.) Binary to Decimal and How to Convert Binary to Decimal. Retrieved from https://www.electronics-tutorials.ws/binary/bin_2.html
 (3) Programing Electronics Academy. (n.d.) MULTI-DIMENSIONAL ARRAYS WITH ARDUINO (AKA MATRIX). Retrieved from https://www.programmingelectronics.com/tutorial-24-multi-dimensional-arrays-aka-matrix-old-version/
+(4) “Language Reference.” Arduino Reference, www.arduino.cc/reference/en/#functions.
 
 Evaluation
 ----
