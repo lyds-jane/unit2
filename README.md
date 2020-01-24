@@ -350,15 +350,16 @@ Here is one example of the C language. A complete index of our work can be found
 
 ### Functions 
 
-Functions were paramount to the development of this solution. They were used in interruptions, to print standard messages, and to translate the input. The ["Functions"](#references) subsection of the Arduino references was used extensively to learn how to use this skill.
+Functions were paramount to the development of this solution. They were used in interruptions, to print standard messages, and to translate the input. The "Functions" [4](#references) subsection of the Arduino references was used extensively to learn how to use this skill.
 
-The flowcharts in [Design](#flow) show the logic of functions, and how they interact with one another.
+The flowcharts in Design show the logic of functions, and how they interact with one another.
 
 ### GitHub
 
 GitHub was used in our previous assignments. It is a good place to store information, as we are able to keep muliple files and file types in one repository. The main process journal is located in this .md file. Then, codes and photos can be stored in other files in the repository. GitHub is especially useful as the entire class has access to each others' repositories. This helps us share resources and learn from each other.
 
 Below is how my GitHub repository looks when I first log on. 
+[!github](GitHub.png)
 
 ## References
 
