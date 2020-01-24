@@ -39,7 +39,7 @@ USING TWO BUTTONS...
 * A message can be typed in English
 * The last entered key can be deleted
 * The message can be translated into morse code and shown back to the client
-* The message can have the option to be "sent"
+* The message can be given by a lightbulb in morse code.
 * A message can be typed in morse code
 * The message can be translated to English and shown back to the client
 
@@ -200,6 +200,8 @@ void message()
 Development
 ----
 
+**All of the code for this project can be found in projectCode.md
+
 What is Usability?
 
 According to [1](#references), usability is "the extent to which a product can be used by specified users to achieve specified goals with effectiveness, efficiency, and satisfaction in a specified context of use."
@@ -350,8 +352,8 @@ The flowcharts in Design show the logic of functions, and how they interact with
 
 GitHub was used in our previous assignments. It is a good place to store information, as we are able to keep muliple files and file types in one repository. The main process journal is located in this .md file. Then, codes and photos can be stored in other files in the repository. GitHub is especially useful as the entire class has access to each others' repositories. This helps us share resources and learn from each other.
 
-Below is how my GitHub files are organized. All of the code for this project can be found in code.md:
-[!github](GitHub.png)
+Below is how my GitHub files are organized:
+[!github](#GitHub.png)
 
 ## References
 
@@ -365,3 +367,35 @@ Below is how my GitHub files are organized. All of the code for this project can
 
 Evaluation
 ----
+
+The testing videos can be accessed here: https://drive.google.com/drive/folders/1GP54CQTwInArqjo29mlwqzjRytWH70al?usp=sharing
+
+To evaluate this project, first, the Earth team will be evaluated through the success criteria and suggest possible improvements. Then, areas of improvement for the whole project will be identified.
+
+### Checking Success Criteria - Earth
+
+**A message can be typed in English**
+This was a success. The message "ABC 789" was successfully typed into Earth's arduino, as noted in the Test Plan. To improve this, a more efficient input system, such as a multi-dimensional array, could have been used.
+
+**The last entered key can be deleted**
+This was also a success. When a typo was made, it was successfully deleted.
+
+**The message can be translated into morse code and shown back to the client**
+This was partially a success. The message was shown on the lightbulb, however, it was not displayed on the LCD. In order to improve this, the translated morse message could be printed on the LCD after the user selected "SEND".
+
+**The message can be given by a lightbulb in morse code.**
+This was a success. The lightbulb showed the message in morse code, with short pauses between letters and long pauses between words.
+
+**A message can be typed in morse code**
+This was a success. The morse code input was very simple with two buttons, and the user was able to see their message as they typed it. To improve this program, a button debounce function could have been added. Occaisionally, the buttons would accidentally input too many dots or dashed. A debounce function could have fixed this issue, and made the program run much smoother. Furthermore, a delete and space option should be added. Since the two buttons functionned as a dash and a dot, this was logistically difficult to create. Therefore, any typos were ignored (or forced the user to restart), and the words were translated one at a time due to the lack of a space option.
+
+**The message can be translated to English and shown back to the client**
+This was a success. The messages were translated letter by letter, and the correct message was given back to the user.
+
+### Future Improvements - Full project
+
+This project was an overall success. However, there are certain ways in which it could be improved. First, the teams could have communicated with each other better. It would have been ideal if we had established early on how long a dot and dash (or 0 adn 1) were, and how long of a space there is between a letter and a word. This is especially important when the two programs are used simultaneously. If someone is waiting for their code to register a letter (and is therefore unable to input anything), but the next letter is already being shown, part of the message will be missed.
+
+Furthermore, the equipment could have been checked better. We only had one working lightbulb by the end of the assignment, and were unable to actually simulate the situation, as the lightbulb had to be transferred between one arduino and the other.
+
+Ultimately, each individual team worked well to create a fairly successful solution to the problem.
