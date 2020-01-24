@@ -339,14 +339,6 @@ This is a portion of the code for an attempted binary counter. It shows the logi
   digitalWrite(k, (~a && b) | (a && b && ~c) | (a && ~b) );
 ```
 
-### C Language
-
-The C language was not used in this project. However, we learned how to use it during the development of the software. This helped us develop our logical reasoning, and the use of different functions.
-
-Here is one example of the C language. A complete index of our work can be found in learningC.md
-
-```.c
-```
 
 ### Functions 
 
@@ -358,7 +350,7 @@ The flowcharts in Design show the logic of functions, and how they interact with
 
 GitHub was used in our previous assignments. It is a good place to store information, as we are able to keep muliple files and file types in one repository. The main process journal is located in this .md file. Then, codes and photos can be stored in other files in the repository. GitHub is especially useful as the entire class has access to each others' repositories. This helps us share resources and learn from each other.
 
-Below is how my GitHub repository looks when I first log on. 
+Below is how my GitHub files are organized. All of the code for this project can be found in code.md:
 [!github](GitHub.png)
 
 ## References
