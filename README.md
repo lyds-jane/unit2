@@ -76,7 +76,7 @@ The following flow diagrams are from:
 3. The English Input program I devlopped that didn't end up getting used in the final product.
 
 **Morse to English**
-[!morse2english](Morse2English.png)
+![morse2english](Morse2English.png)
 *Fig. 4 - Morse to English*
 This shows the Morse to Enlgish logical process. The diagram is separated into functions to show the way in which the computer jumps from one function to another, depending on the results of the interrupts and if statements.
 
@@ -85,7 +85,7 @@ This shows the Morse to Enlgish logical process. The diagram is separated into f
 This shows the flow diagram for the English to Morse code. This code has an added element - the morse code must be shown on the lightbulb output.
 
 **English Input**
-[!englishinput](english_input.png)
+![englishinput](english_input.png)
 *Fig. 6 - English Input*
 This shows the logic behind an initial plan for an English Input system. The system was later amalgamated with the English to Morse program, so this code was not used in the end. However, I am very proud of this system, as it is very efficient from a user's standpoint. Instead of the keyboard options being in a 1-dimensional array, I created a matrix that reduced the number of clicks necessary to select a given letter. The full code is below:
 
@@ -353,7 +353,7 @@ The flowcharts in Design show the logic of functions, and how they interact with
 GitHub was used in our previous assignments. It is a good place to store information, as we are able to keep muliple files and file types in one repository. The main process journal is located in this .md file. Then, codes and photos can be stored in other files in the repository. GitHub is especially useful as the entire class has access to each others' repositories. This helps us share resources and learn from each other.
 
 Below is how my GitHub files are organized:
-[!github](#GitHub.png)
+![github](GitHub.png)
 
 ## References
 
